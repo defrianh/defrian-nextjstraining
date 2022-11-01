@@ -1,0 +1,12 @@
+.table {
+    margin-top: 20px;
+    width: 80%;
+    text-align: left;
+}
+.table th {
+    width: 30%;
+}
+.characterdetail{
+    text-align: center;
+    width: 80%;
+}

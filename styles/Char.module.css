@@ -1,0 +1,13 @@
+.charlist {
+    width: 80%;
+    padding:10px;
+    border: 1px solid #eaeaea;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: left;
+    cursor: pointer;
+}
+.charlist:hover {
+    border: 1px solid #0070f3;
+}
