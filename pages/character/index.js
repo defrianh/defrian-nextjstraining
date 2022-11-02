@@ -32,7 +32,7 @@ export default function Character(props) {
 }
 
 export async function getStaticProps() {
-  const fecthData = await fetch('http://localhost:3000/api/avatar')
+  const fecthData = await fetch('https://last-airbender-api.herokuapp.com/api/v1/characters/avatar')
   const data = await fecthData.json()
   return {
     props: { data },

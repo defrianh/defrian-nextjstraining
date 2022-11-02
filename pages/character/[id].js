@@ -38,7 +38,7 @@ const CharacterDetail = (props) => {
 }
 
 export async function getStaticPaths() {
-    const fecthData = await fetch(`http://localhost:3000/api/avatar`)
+    const fecthData = await fetch(`https://last-airbender-api.herokuapp.com/api/v1/characters/avatar`)
     const datas = await fecthData.json()
 
     const paths = datas.map((data) => ({
@@ -49,7 +49,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const fecthData = await fetch(`http://localhost:3000/api/avatar/${params.id}`)
+    const fecthData = await fetch(`https://last-airbender-api.herokuapp.com/api/v1/characters/${params.id}`)
     const data = await fecthData.json()
     return {
         props: { data },
