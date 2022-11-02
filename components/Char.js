@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import styles from '../styles/Char.module.css'
+import styles from '@/styles/Char.module.css'
+
 const Char = (props) => {
     return (
         <div className={styles.charlist}>

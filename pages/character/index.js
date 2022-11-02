@@ -1,30 +1,40 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Char from '../../components/Char'
-import styles from '../../styles/Home.module.css'
+import styles from '@/styles/Home.module.css'
+import dynamic from 'next/dynamic'
 
 export default function Character(props) {
-  const { dataPosts } = props
+  const { data } = props
+  const Character = dynamic( () => import('@/components/Character'))
   return (
     <>
       <main className={styles.main}>
         <h1 className={styles.title}>
           Avatar Characters by Local API
         </h1>
+        <h4>Using getStaticProps</h4>
         {
-          dataPosts.map((post) => {
-            return (<Char name={post.name} id={post.id} key={post._id} />)
-          })
+          data && (
+            data.map((post) => 
+              <Character 
+                name={post.name} 
+                id={post._id} 
+                key={post._id} 
+                photoUrl={post.photoUrl}
+                profession={post.profession}
+              />
+            )
+          )
         }
       </main>
     </>
   )
 }
 
-export async function getServerSideProps(context) {
-  const fecthPosts = await fetch('http://localhost:3000/api/avatar')
-  const dataPosts = await fecthPosts.json()
+export async function getStaticProps() {
+  const fecthData = await fetch('http://localhost:3000/api/avatar')
+  const data = await fecthData.json()
   return {
-    props: { dataPosts },
+    props: { data },
   }
 }

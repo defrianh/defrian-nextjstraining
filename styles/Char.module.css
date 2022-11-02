@@ -7,7 +7,42 @@
     border-radius: 5px;
     text-align: left;
     cursor: pointer;
+    background-color: #fff;
+    box-shadow:  0 0 1px rgba(0,0,0,.1),0 2px 4px rgba(0,0,0,.02);
+    position: relative;
+    flex-grow: 1;
 }
 .charlist:hover {
     border: 1px solid #0070f3;
+}
+.avatarimage {
+    width: 280px;
+    float: left;
+}
+.avatarimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.avatarcontent {
+    padding: 20px;
+    overflow: hidden;
+}
+.avatarcontent h1 {
+    margin: 0;
+}
+.favoritebox {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+}
+.profession {
+    padding: 5px 10px;
+    background-color: #16A5E1;
+    color: #fff;
+    border-radius: 15px;
 }

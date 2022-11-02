@@ -1,0 +1,39 @@
+.container {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+    user-select: text;
+}
+.errordetail{
+    display: flex;
+    align-items: center;
+}
+.errorimage{
+    margin: 15px;
+}
+.errormessage{
+    margin: 0;
+}
+.errormessage h1 {
+    margin: 0;
+    color: #979797;
+    font-size: 7.8rem;
+    line-height: .9em;
+    text-align: center;
+}
+.errormessage h3 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: #979797;
+    font-size: 1.9rem;
+    font-weight: 300;
+}
+.errormessage h4{
+    text-align: right;
+    margin-top: 5px;
+    font-size: 1rem;
+    line-height: 1;
+}

@@ -1,8 +1,10 @@
-import Char from '../components/Char'
-import styles from '../styles/Home.module.css'
+import styles from '@/styles/Home.module.css'
+import dynamic from 'next/dynamic'
 
 export default function Home(props) {
-  const { dataPosts } = props
+  const { data } = props
+  const Char = dynamic(() => import('@/components/Char'), { ssr: true, loading: () => <b>Loading..</b> })
+
   return (
     <>
       <main className={styles.main}>
@@ -10,9 +12,10 @@ export default function Home(props) {
           Avatar Characters
         </h1>
         {
-          dataPosts.map((post) => {
-            return (<Char name={post.name} id={post.id} key={post._id} />)
-          })
+          data && (data.map((avatar) => {
+              return (<Char name={avatar.name} id={avatar.id} key={avatar._id} />)
+            })
+          )
         }
       </main>
     </>
@@ -20,9 +23,9 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps(context) {
-  const fecthPosts = await fetch('https://last-airbender-api.herokuapp.com/api/v1/characters/avatar')
-  const dataPosts = await fecthPosts.json()
+  const fecthData = await fetch('https://last-airbender-api.herokuapp.com/api/v1/characters/avatar')
+  const data = await fecthData.json()
   return {
-    props: { dataPosts },
+    props: { data },
   }
 }

@@ -7,12 +7,15 @@ const Navbar = () => {
                 <li><Link href='/'>Home</Link></li>
                 <li><Link href='/avatar'>Avatar</Link></li>
                 <li><Link href='/character'>Avatar API</Link></li>
+                <li><Link href='/favorite'>My Favorite</Link></li>
             </ul>
             <style jsx>
                 {`
                 .navigation {
                     padding:5px;
                     border-bottom:1px solid #eaeaea;
+                    background:#fff;
+                    box-shadow: inset 0 -1px 0 0 #fff, 0 1px 5px rgb(0 0 0 / 10%);
                 }
                 ul {
                     list-style-type: none;
@@ -32,6 +35,12 @@ const Navbar = () => {
                     display: block;
                     text-align: center;
                     text-decoration: none;
+                  }
+                  li a:hover{
+                    color:#0070f3;
+                  }
+                  li:hover{
+                    color:#0070f3;
                   }
             `}
             </style>
